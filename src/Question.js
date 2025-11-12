@@ -19,21 +19,20 @@ export class Question {
     legend.textContent = this.enunciation;
     fieldset.appendChild(legend);
 
-    let index = 0;
     // Créer un bouton `input type="radio" name=`answers` + le label associé pour chaque item de `#answers`
-    for (const answer of this.answers) {
+    this.answers.forEach((val, idx) => {
+
       const inputAnswer = document.createElement('input');
       inputAnswer.type = 'radio';
       inputAnswer.name = 'answers'
-      inputAnswer.value = String(index);
+      inputAnswer.value = String(idx);
       fieldset.appendChild(inputAnswer);
 
       const labelAnswer = document.createElement('label');
-      labelAnswer.textContent = answer;
+      labelAnswer.textContent = val;
       fieldset.appendChild(labelAnswer);
       divQuizz.appendChild(fieldset);
-      index++;
-    }
+    });
   }
 
   get enunciation() {
