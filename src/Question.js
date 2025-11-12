@@ -20,7 +20,7 @@ export class Question {
     fieldset.appendChild(legend);
 
     // Créer un bouton `input type="radio" name=`answers` + le label associé pour chaque item de `#answers`
-    this.answers.forEach((val, idx) => {
+    this.answers.forEach((answer, idx) => {
 
       const inputAnswer = document.createElement('input');
       inputAnswer.type = 'radio';
@@ -29,7 +29,7 @@ export class Question {
       fieldset.appendChild(inputAnswer);
 
       const labelAnswer = document.createElement('label');
-      labelAnswer.textContent = val;
+      labelAnswer.textContent = answer;
       fieldset.appendChild(labelAnswer);
       divQuizz.appendChild(fieldset);
     });
