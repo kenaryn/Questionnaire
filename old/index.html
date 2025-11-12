@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz</title>
+  <script type="module" src="script.js"></script>
+</head>
+<body>
+
+<h1>Quiz</h1>
+
+<div id="quiz"></div>
+
+<form>
+  <button id="submitQuiz">Valider le quiz</button>
+</form>
+
+<template id="templateQuestion">
+  <fieldset>
+    <legend enonce></legend>
+    <div>
+      <input type="radio" id="reponse1" name="reponse" value="" />
+      <label for="reponse1">Réponse 1</label>
+      <input type="radio" id="reponse2" name="reponse" value="" />
+      <label for="reponse2">Réponse 2</label>
+      <input type="radio" id="reponse3" name="reponse" value="" />
+      <label for="reponse3">Réponse 3</label>
+    </div>
+  </fieldset>
+</template>
+
+</body>
+</html>
