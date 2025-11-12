@@ -25,21 +25,37 @@ export class Quizz {
 
   collecterReponse() {
     /*
+     0. Supprimer warning s'il existe
      1. Parcourir tous les boutons radio
      2. Pour chacun d'eux, vérifier s'il est coché, puis assigner sa valeur à la réponse de l'utilisateur
      3. Si cette réponse est la réponse correcte liée au pas de la question, incrémenter le score
      4. Incrémenter le pas de question
      5. Afficher la question suivante.
     */
+
+    const avertissementExistant = document.querySelector('fieldset .warning');
+    avertissementExistant?.remove();
+
     const answers = document.getElementsByName('answers');
     let reponseUtilisateur = null;
+    let reponseExiste = false;
 
     for (const answer of answers) {
       if (answer.checked) {
         reponseUtilisateur = parseInt(answer.value);
+        reponseExiste = true;
         break;
       }
     }
+
+    if (!reponseExiste) {
+      const warning = document.createElement('p');
+      warning.textContent = 'Veuillez choisir une réponse';
+      warning.classList.add('warning');
+      document.querySelector('fieldset').appendChild(warning);
+      return;
+    }
+
     if (reponseUtilisateur === this.questions[this.#step].correctAnswer) {
       this.#score++;
     }

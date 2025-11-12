@@ -1,3 +1,25 @@
+body {
+    text-align:center;
+    background-color: bisque;
+}
+
 .hidden {
   display: none;
+}
+
+.warning {
+    font-weight: bold;
+    line-height: 1.15rem;
+    color: darkmagenta;
+}
+
+button#submit {
+    background-color: #444;
+    color: floralwhite;
+    font-size: 1.2rem;
+    padding: 0.4rem 1rem;
+    margin-top: 1.25rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0.15rem 0.15rem black;
 }
